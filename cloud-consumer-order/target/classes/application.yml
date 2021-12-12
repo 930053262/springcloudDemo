@@ -1,0 +1,6 @@
+server:
+  port: 8002 #服务端口
+#spring相关配置
+spring:
+  application:
+    name: springcloutTest-order  #服务名
