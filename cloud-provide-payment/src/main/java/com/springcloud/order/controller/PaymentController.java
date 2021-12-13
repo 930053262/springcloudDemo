@@ -1,12 +1,11 @@
-package com.springcloud.demo.controller;
+package com.springcloud.order.controller;
 
 import com.springCloud.pojo.CommonResult;
 import com.springCloud.pojo.Payment;
-import com.springcloud.demo.service.PaymentService;
+import com.springcloud.order.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 
 /*

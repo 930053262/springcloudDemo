@@ -1,4 +1,4 @@
-package com.springcloud.demo.dao;
+package com.springcloud.order.dao;
 
 import com.springCloud.pojo.Payment;
 import org.apache.ibatis.annotations.Mapper;

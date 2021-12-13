@@ -1,8 +1,8 @@
-package com.springcloud.demo.service.impl;
+package com.springcloud.order.service.impl;
 
 import com.springCloud.pojo.Payment;
-import com.springcloud.demo.dao.PaymentDao;
-import com.springcloud.demo.service.PaymentService;
+import com.springcloud.order.dao.PaymentDao;
+import com.springcloud.order.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
