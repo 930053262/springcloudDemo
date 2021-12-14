@@ -1,0 +1,4 @@
+com\springcloud\myrule\MyselfRule.class
+com\springcloud\oms\controller\OmsController.class
+com\springcloud\oms\OmsMain.class
+com\springcloud\oms\config\ApplicationContextConfig.class
