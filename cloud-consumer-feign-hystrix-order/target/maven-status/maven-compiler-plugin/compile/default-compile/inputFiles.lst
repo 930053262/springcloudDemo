@@ -1,0 +1,4 @@
+G:\myProject\springcloutTest\cloud-consumer-feign-hystrix-order\src\main\java\com\springcloud\hystrixorder\service\impl\PaymentFallbackService.java
+G:\myProject\springcloutTest\cloud-consumer-feign-hystrix-order\src\main\java\com\springcloud\hystrixorder\service\PaymentHystrixService.java
+G:\myProject\springcloutTest\cloud-consumer-feign-hystrix-order\src\main\java\com\springcloud\hystrixorder\controller\OrderHystirxController.java
+G:\myProject\springcloutTest\cloud-consumer-feign-hystrix-order\src\main\java\com\springcloud\hystrixorder\OrderHystrixMain.java
