@@ -1,0 +1,4 @@
+com\springcloud\geteway\GatewayMain.class
+com\springcloud\geteway\config\GateWayConfig.class
+com\springcloud\geteway\filter\TokenFilter.class
+com\springcloud\geteway\filter\MyLogGatewatFilter.class

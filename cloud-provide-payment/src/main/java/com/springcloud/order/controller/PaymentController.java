@@ -43,6 +43,7 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
             return new CommonResult(444,"插入数据库失败",null);
         }
     }
+
     @GetMapping("/payment/get/{id}")
     public CommonResult queryById(@PathVariable("id") Long id){
         Payment payment = paymentService.queryById(id);
@@ -55,6 +56,17 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
         }
     }
 
+    @GetMapping("/payment/lb/{id}")
+    public CommonResult queryLb(@PathVariable("id") Long id){
+        Payment payment = paymentService.queryById(id);
+        log.info("***************查询成功*********"+payment);
+
+        if(payment!=null){
+            return new CommonResult(200,"查询成功"+serverPort,payment);
+        }else{
+            return new CommonResult(444,"查询失败",null);
+        }
+    }
 
     //获取服务信息
     @GetMapping("/payment/discovery")
