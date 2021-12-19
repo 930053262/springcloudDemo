@@ -11,6 +11,7 @@
         <module name="cloud-eureka-server" />
         <module name="cloud-provide-payment02" />
         <module name="cloud-consumer-oms" />
+        <module name="cloud-consumer-hystrix-dashboar" />
         <module name="cloud-api-commons" />
         <module name="cloud-provide-payment" />
         <module name="cloud-eureka-server02" />
