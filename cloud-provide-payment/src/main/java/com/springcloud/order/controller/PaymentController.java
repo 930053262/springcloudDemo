@@ -2,6 +2,7 @@ package com.springcloud.order.controller;
 
 import com.springCloud.pojo.CommonResult;
 import com.springCloud.pojo.Payment;
+import com.springcloud.order.service.IRedis;
 import com.springcloud.order.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
 
     private int serverPort;
 
+    @Autowired
+    private IRedis iRedis;
     //注入服务发现的注解
     @Autowired
     private DiscoveryClient discoveryClient;
@@ -44,16 +47,25 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
         }
     }
 
-    @GetMapping("/payment/get/{id}")
-    public CommonResult queryById(@PathVariable("id") Long id){
-        Payment payment = paymentService.queryById(id);
-        log.info("***************查询成功*********"+payment);
+    @GetMapping("/payment/get/{key}")
+    public CommonResult queryById(@PathVariable("key") String id){
+       /* Payment payment = paymentService.queryById(id);
+        log.info("*******erere查询成功*********"+payment);
 
         if(payment!=null){
             return new CommonResult(200,"查询成功"+serverPort,payment);
         }else{
             return new CommonResult(444,"查询失败",null);
-        }
+        }*/
+        iRedis.set(id,"testValue",2000);
+
+        String no = iRedis.getCaseNumber("No");
+        System.out.println("==自增序列："+no);
+
+        System.out.println("======"+id);
+        String value = iRedis.get(id);
+        System.out.println("value="+value);
+        return new CommonResult(200,"成功",value);
     }
 
     @GetMapping("/payment/lb/{id}")

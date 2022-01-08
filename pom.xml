@@ -21,6 +21,7 @@
         <module>cloud-consumer-feign-hystrix-order</module>
         <module>cloud-consumer-hystrix-dashboar</module>
         <module>cloud-gateway-gateway9527</module>
+        <module>cloud-config-center</module>
     </modules>
 
     <properties>
@@ -94,13 +95,11 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j.vsrsion}</version>
             </dependency>
-
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>1.2.3</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

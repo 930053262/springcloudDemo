@@ -1,5 +1,8 @@
+G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\service\impl\RedisService.java
+G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\service\IRedis.java
 G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\service\impl\PaymentImple.java
 G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\controller\PaymentController.java
 G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\dao\PaymentDao.java
+G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\controller\TestRedisController.java
 G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\PayMentMain.java
 G:\myProject\springcloutTest\cloud-provide-payment\src\main\java\com\springcloud\order\service\PaymentService.java

@@ -14,10 +14,10 @@ public class GatewayMain {
         SpringApplication.run(GatewayMain.class,args);
     }
 
-
+/*
     @Bean
     public TokenFilter tokenFilter(){
         return new TokenFilter();
-    }
+    }*/
 
 }
