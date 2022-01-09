@@ -1,8 +1,13 @@
 com\springcloud\order\service\impl\RedisService.class
 com\springcloud\order\PayMentMain.class
 com\springcloud\order\service\impl\PaymentImple.class
+com\springcloud\order\service\QueueMessageService.class
 com\springcloud\order\controller\TestRedisController.class
 com\springcloud\order\service\PaymentService.class
-com\springcloud\order\controller\PaymentController.class
+com\springcloud\order\config\AmqpAckConfig.class
+com\springcloud\order\config\TestReceiver.class
 com\springcloud\order\dao\PaymentDao.class
 com\springcloud\order\service\IRedis.class
+com\springcloud\order\config\AmqpConfig.class
+com\springcloud\order\controller\PaymentController.class
+com\springcloud\order\service\impl\QueueMessageServiceImpl.class

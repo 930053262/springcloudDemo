@@ -1,9 +1,13 @@
 package com.springcloud.order.controller;
 
+import cn.hutool.core.date.DateUtil;
+import com.alibaba.fastjson.JSON;
 import com.springCloud.pojo.CommonResult;
 import com.springCloud.pojo.Payment;
+import com.springcloud.order.config.AmqpConfig;
 import com.springcloud.order.service.IRedis;
 import com.springcloud.order.service.PaymentService;
+import com.springcloud.order.service.QueueMessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.context.WebServerInitializedEvent;
@@ -13,6 +17,8 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -32,6 +38,10 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
 
     @Autowired
     private IRedis iRedis;
+
+    @Autowired
+    private QueueMessageService queueMessageService;
+
     //注入服务发现的注解
     @Autowired
     private DiscoveryClient discoveryClient;
@@ -65,6 +75,13 @@ public class PaymentController implements ApplicationListener<WebServerInitializ
         System.out.println("======"+id);
         String value = iRedis.get(id);
         System.out.println("value="+value);
+
+        //msec：距离调用队列的时间（毫秒） param_extend：向队列传递的参数
+        int msec = Integer.parseInt(Long.toString(DateUtil.betweenMs(new Date(), new Date())))+5000;
+        HashMap<String, Object> param_extend = new HashMap<>();
+        param_extend.put("id","123456");
+        queueMessageService.delayedSend(AmqpConfig.DELAYED_EXCHANGE_KEY, AmqpConfig.ORDER_GROUP_JOIN_QUEUE_KEY, JSON.toJSONString(param_extend), msec);
+
         return new CommonResult(200,"成功",value);
     }
 
