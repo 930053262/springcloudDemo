@@ -6,9 +6,11 @@
 
     <groupId>com.cloudDemo</groupId>
     <artifactId>springcloutTest</artifactId>
+
     <!-- 首先修改打包方式 -->
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>cloud-api-commons</module>
         <module>cloud-provide-payment</module>
@@ -25,9 +27,17 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <!-- 设置源代码兼容性 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <!-- 设置目标字节码版本 -->
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- 可选：指定编码方式 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- springcloud版本 -->
+        <springcloud.version>Greenwich.SR1</springcloud.version>
+        <!-- srpingboot.version -->
+        <springboot.version>2.1.4.RELEASE</springboot.version>
+
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.10</druid.version>
         <junit.version>4.1.2</junit.version>
@@ -41,7 +51,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.SR1</version>
+                <version>${springcloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -50,7 +60,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.1.4.RELEASE</version>
+                <version>${springboot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
